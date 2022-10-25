@@ -222,4 +222,4 @@ class DiscountRateMethods:
         simple_dr =  simple_ir / (1 + (simple_ir * interest_period ))
         return simple_dr
 
-    
+     
