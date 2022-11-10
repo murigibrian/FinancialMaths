@@ -52,7 +52,7 @@ class VaryAnnuityMethods:
         """
             Returns the present value of an annuity where the amount increases continuously with time
         """
- 
+
         # annuity Props
         rate = annuity_continuous.annuity_rate
         to_cont_factor = rate.convert_to("compound interest", norminal_period= annuity_continuous.norminal_period) / rate.foi
