@@ -4,14 +4,17 @@ class Annuity:
     """
         Handles non-varying annuity calculations.
     """
-    is_arrear: bool
-    is_advance: bool
-    is_continuous: bool
 
-    annuity_rate: Rate 
-    annuity_term: float
-    annuity_amount: float
-    norminal_period: float
+    # Annuity type
+    is_arrear: bool  # Payments for each installment are paid at the end of each norminal period.
+    is_advance: bool  # Payments for each installment are paid at the begining of each norminal period.
+    is_continuous: bool  # Payments are made through out the norminal period.
+
+    # Annuity core properties
+    annuity_rate: Rate  # Rate obj that contains effective interest rate 
+    annuity_term: float  # States for how long the annuities are paid
+    annuity_amount: float  # Amount paid in each installment 
+    norminal_period: float  # Length of period until the next compounding
 
 
     arrear_pv: float
@@ -124,7 +127,33 @@ class Annuity:
         # Present value of the annuity
         annuity_pv *= self.annuity_amount
 
-        return annuity_pv       
+        return annuity_pv
+        
+
+    def loan_schedule(self, loan_amount: float= 1):
+        """
+            Generates a loan shedule from the annuity
+        """
+        import pandas as pd
+
+        rate = self.annuity_rate
+        term = self.annuity_term
+        annuity_pv = self.time_value()
+        installment = loan_amount / self.time_value()
+        balance = loan_amount
+
+        temp = []
+        for period in range(term):
+            principal = (installment - loan_amount * rate.interest_rate)*rate.time_value_factor(period)
+            bonus = installment - principal
+            balance = balance - principal
+
+            temp.append([period, installment, principal, bonus, balance])
+
+        df = pd.DataFrame(temp, columns=["period", "installment", "principal", "interest", "balance"])
+        df["period"] += 1 if(self.is_arrear)else(0)
+        df = df.set_index("period")
+        return  df
         
     
 
