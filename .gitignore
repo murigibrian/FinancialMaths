@@ -29,6 +29,7 @@ Latest commit 9190f86 4 days ago
 @murigibrian@yobranoDev
 132 lines (106 sloc)  1.77 KB
 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -158,8 +159,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-
+n
 playground.py
 Footer
 © 2022 GitHub, Inc.
@@ -176,3 +176,5 @@ Training
 Blog
 About
 FinancialMaths/.gitignore at main · murigibrian/FinancialMaths
+
+playground.py
