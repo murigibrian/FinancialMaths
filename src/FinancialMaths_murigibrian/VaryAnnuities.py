@@ -1,5 +1,5 @@
-from Annuities import Annuity
-from InterestRates import Rate
+from .Annuities import Annuity
+from .InterestRates import Rate
 
 class VaryAnnuityMethods:
     def increasing_arrear_pv(annuity_arrear: Annuity):

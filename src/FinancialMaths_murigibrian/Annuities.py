@@ -1,4 +1,4 @@
-from InterestRates import Rate
+from .InterestRates import Rate
 
 class Annuity:
     """
@@ -134,7 +134,6 @@ class Annuity:
         """
             Generates a loan shedule from the annuity
         """
-        import pandas as pd
 
         rate = self.annuity_rate
         term = self.annuity_term
@@ -142,18 +141,20 @@ class Annuity:
         installment = loan_amount / self.time_value()
         balance = loan_amount
 
-        temp = []
+        temp = {"period": [], "installment": [], "principal": [], "interest": [], "balance": []}
         for period in range(term):
             principal = (installment - loan_amount * rate.interest_rate)*rate.time_value_factor(period)
             bonus = installment - principal
             balance = balance - principal
 
-            temp.append([period, installment, principal, bonus, balance])
+            temp["period"] += [period + 1] if(self.is_arrear)else([period])
+            temp["installment"] += [installment] 
+            temp["principal"] += [principal] 
+            temp["interest"] += [bonus] 
+            temp["balance"] += [balance] 
+ 
 
-        df = pd.DataFrame(temp, columns=["period", "installment", "principal", "interest", "balance"])
-        df["period"] += 1 if(self.is_arrear)else(0)
-        df = df.set_index("period")
-        return  df
+        return  temp
         
     
 
