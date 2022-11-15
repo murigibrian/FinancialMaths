@@ -1,3 +1,35 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@murigibrian 
+murigibrian
+/
+FinancialMaths
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+FinancialMaths/.gitignore
+@yobranoDev
+yobranoDev Merge branch 'main' into YobranoDev
+Latest commit 9190f86 4 days ago
+ History
+ 2 contributors
+@murigibrian@yobranoDev
+132 lines (106 sloc)  1.77 KB
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,6 +159,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
+n
+playground.py
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+FinancialMaths/.gitignore at main · murigibrian/FinancialMaths
 
 playground.py

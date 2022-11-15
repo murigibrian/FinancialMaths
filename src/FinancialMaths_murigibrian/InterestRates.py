@@ -1,4 +1,4 @@
-from InterestRateMethods import AccumulationRateMethods, DiscountRateMethods
+from .InterestRateMethods import AccumulationRateMethods, DiscountRateMethods
 
 
 class Rate:
