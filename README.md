@@ -25,9 +25,11 @@ Is the raw rate a discounting rate or otherwise (accumulating or force of intere
 Rate object. 
 
 **Methods**
-* **time_value_factor( self, period, discount=  False )**
+* `time_value_factor( self, period, discount=  False )`
+
 Returns the time value factor (a float) for the Rate object. The `period` parameter sets the number of effective periods for which the rate is enforced. Should a discounting factor be required change `discount` to `True`.
-* **convert_to(self, to, nominal_period=  1)**
+* `convert_to(self, to, nominal_period=  1)`
+
 One may need to find a nominal rate that would provide the same accumulated (or discounted) value as some effective rate. `convert_to` method accepts the `nominal_period` parameter (a float) that assists in the same.
 
 **Properties**
