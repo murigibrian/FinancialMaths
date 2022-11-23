@@ -3,9 +3,9 @@ Objects and methods in the module comprise of the following.
 
 ## FinancialMaths.Rate 
 
-`FinancialMaths.Rate(`*raw_rate, nominal_period=  1, is_foi=  False,  is_discount=  False,  is_simple=  False*`)` [[source]](https://github.com/murigibrian/FinancialMaths/blob/main/src/FinancialMaths_murigibrian/InterestRates.py)
+`FinancialMaths.Rate(raw_rate, nominal_period=  1, is_foi=  False,  is_discount=  False,  is_simple=  False )` [[source]](https://github.com/murigibrian/FinancialMaths/blob/main/src/FinancialMaths_murigibrian/InterestRates.py)
 
-Above is a constructor for the Rate object which one can obtain the discounting or accumulating factor. 
+Above is a constructor for the Rate object with which one can obtain the discounting or accumulating factor. 
 
 The attributes of the rate (discounting or accumulating) are fed in then an effective interest rate is generated. When the time value factor is required, the generated effective interest rate is reconverted to the required rate.  A similar idea is implemented for simple and nominal rates. This is done to ensure a single function can be called to provide the time value factor irrespective of the interest rate's profile. 
 
@@ -35,5 +35,5 @@ One may need to find a nominal rate that would provide the same accumulated (or 
 * is_foi
 * is_discount_rate 
 * interest_rate 
-* discount_rate: float = 0
+* discount_rate
 * foi 
